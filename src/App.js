@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import SoulGatherer from './components/soulGatherer/soulGatherer';
+import Header from './components/header/Header';
+import Selector from './components/selector/Selector';
+import Image from './components/image/Image';
+import StatBlock from './components/statBlock/StatBlock';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedMinion: "Skeleton" };
+    this.selectMinion = this.selectMinion.bind(this);
+  }
+
+  selectMinion(e) {
+    this.setState({selectedMinion: e.target.id})
+  }
+
+  render() {
+      return (
+      <div className="App">
+        <Header />
+        <Selector selectMinion={ this.selectMinion }/>
+        <SoulGatherer />
+        <StatBlock minionType={ this.state.selectedMinion }/>
+        <Image minionType={ this.state.selectedMinion }/>
+      </div>
+    )
+  }
 }
 
 export default App;

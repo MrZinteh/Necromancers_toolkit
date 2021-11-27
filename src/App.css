@@ -1,5 +1,14 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 5fr 15fr 5fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header"
+    "selector selector selector"
+    "conCap statblock image"
+    "conCap statblock image"
+    "minionList decription dScryb"
+    "minionList decription dScryb";
 }
 
 .App-logo {
@@ -35,4 +44,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Header {
+  grid-area: header;
+  justify-self: center;
+  font-size: 28px;
+  font-style: Verdana;
+  padding: 8px 128px; 
+  margin: 30px 60px;
+  border: 2px solid #456545;
+}
+
+.Selector {
+  grid-area: selector;
+  justify-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 2px solid #456545;
+  margin: 0px 10px;
+}
+
+.selectorItem {
+  padding: 8px 30px; 
+}
+
+.soulGatherer {
+  grid-area: conCap;
+  align-self: stretch;
+}
+
+.statBlock {
+  grid-area: statblock;
+  padding-top: 30px;
+  justify-self: center;
+}
+
+.Image {
+  grid-area: image;
+  justify-self: center;
 }
