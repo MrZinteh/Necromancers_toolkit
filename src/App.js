@@ -5,6 +5,7 @@ import Header from './components/header/Header';
 import Selector from './components/selector/Selector';
 import Image from './components/image/Image';
 import StatBlock from './components/statBlock/StatBlock';
+import MinionViewer from './components/minionViewer/MinionViewer';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class App extends React.Component {
         <SoulGatherer />
         <StatBlock minionType={ this.state.selectedMinion }/>
         <Image minionType={ this.state.selectedMinion }/>
+        <MinionViewer minionType={ this.state.selectedMinion }/>
       </div>
     )
   }

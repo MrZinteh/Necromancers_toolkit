@@ -10,7 +10,7 @@ import undead_spirit from './undead_spirit.png';
 class Image extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { src: zombie }
+        this.state = { src: skeleton }
     }
 
     componentDidUpdate(prevProps) {

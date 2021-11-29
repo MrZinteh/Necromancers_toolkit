@@ -85,3 +85,11 @@
   grid-area: image;
   justify-self: center;
 }
+
+.minionViewer {
+  grid-area: minionList;
+  justify-self: stretch;
+  border: 2px solid #456545;
+  padding: 10px;
+  margin-bottom: 30px;
+}
