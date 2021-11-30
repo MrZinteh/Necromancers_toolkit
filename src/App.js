@@ -6,6 +6,7 @@ import Selector from './components/selector/Selector';
 import Image from './components/image/Image';
 import StatBlock from './components/statBlock/StatBlock';
 import MinionViewer from './components/minionViewer/MinionViewer';
+import MinionConjurer from './components/minionConjurer/MinionConjurer';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +24,10 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <Selector selectMinion={ this.selectMinion }/>
-        <SoulGatherer />
+        <div className="conCap">
+          <MinionConjurer />
+          <SoulGatherer />
+        </div>
         <StatBlock minionType={ this.state.selectedMinion }/>
         <Image minionType={ this.state.selectedMinion }/>
         <MinionViewer minionType={ this.state.selectedMinion }/>

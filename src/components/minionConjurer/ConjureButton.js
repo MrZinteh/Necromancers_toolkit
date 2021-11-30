@@ -1,11 +1,23 @@
 import React from 'react';
 
-export class CaptureButton extends React.Component {
+export class ConjureButton extends React.Component {
+	constructor(props) {
+		super(props);
+		this.style = {
+			color: 'white',
+			backgroundColor: '#456545',
+			padding: '8px 32px',
+			borderRadius: '12px',
+			fontStyle: 'Helvetica',
+			fontSize: '17px'
+		}
+	}
 	render() {
 		return (
 			<button 
 				className="conjureButton"
-                onClick = { this.props.onClick }>
+                onClick = { this.props.onClick }
+				style = { this.style }>
 				Conjure!
 			</button>
 		);

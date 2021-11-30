@@ -31,11 +31,8 @@ class SoulGatherer extends React.Component {
     render() {
         return (
             <div className="soulGatherer">
-                <input type="text" id="soulName" name="soulName" onChange={this.handleInputChange}/>
+                <input type="text" id="soulName" name="soulName" placeholder="Name of soul..." onChange={this.handleInputChange}/>
                 <CaptureButton onClick={this.handleClick} />
-                <header>
-                    <p>{this.state.soul}</p>
-                </header>
             </div>
         );
     }

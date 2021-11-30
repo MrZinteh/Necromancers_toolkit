@@ -21,6 +21,10 @@ class MinionViewer extends React.Component {
             });
     }
 
+    componentDidMount() {
+        this.getMinions();
+    }
+
     componentDidUpdate(prevProps) {
         if (this.props.minionType !== prevProps.minionType) {
             this.getMinions();

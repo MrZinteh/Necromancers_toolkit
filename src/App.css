@@ -70,9 +70,38 @@
   padding: 8px 30px; 
 }
 
-.soulGatherer {
+.conCap {
   grid-area: conCap;
-  align-self: stretch;
+  /* align-self: center; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  margin-right: 70px;
+  margin-left: 20px;
+}
+
+#minions {
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom:15px;
+  text-align: center;
+}
+
+.minionConjurer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#soulName {
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom:15px;
+  text-align: center;
+}
+
+.soulGatherer {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .statBlock {
