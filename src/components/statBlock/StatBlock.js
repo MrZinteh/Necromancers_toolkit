@@ -46,7 +46,7 @@ class StatBlock extends React.Component {
     render() {
         return (
             <div className="statBlock">
-                <img src={ this.state.src } alt="Skeleton" style={{ maxWidth: 600 }} />
+                <img src={ this.state.src } alt="Skeleton" style={{ maxHeight: 400 }} />
             </div>
         );
     }

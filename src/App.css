@@ -143,9 +143,25 @@
   grid-area: minionList;
   justify-self: stretch;
   border: 2px solid #456545;
-  padding: 10px;
   margin-bottom: 30px;
   margin-left: 10px;
+}
+
+.minionRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+h3 {
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+  padding-left: 10px;
+}
+
+.minionReDeceaser {
+  justify-self: flex-end;
 }
 
 .Description {

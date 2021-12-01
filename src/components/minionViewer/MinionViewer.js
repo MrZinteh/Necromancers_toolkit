@@ -1,10 +1,12 @@
 import React from 'react';
+import { MinionReDeceaser } from './MinionReDeceaser'; 
 
 class MinionViewer extends React.Component {
     constructor(props) {
         super(props);
         this.state = { result: [], loading: true };
         this.getMinions = this.getMinions.bind(this);
+        this.reDecease = this.reDecease.bind(this);
     }
 
     getMinions() {
@@ -21,6 +23,13 @@ class MinionViewer extends React.Component {
             });
     }
 
+    reDecease(name) {
+        fetch(`/minions?name=${name}`, {method: 'DELETE'})
+            .then(() => {
+                this.getMinions();
+            })
+    }
+
     componentDidMount() {
         this.getMinions();
     }
@@ -34,9 +43,10 @@ class MinionViewer extends React.Component {
     render() {
         return (
             <div className="minionViewer">
+                <h3>Minions:</h3>
                 { this.state.loading ? "Loading..." : 
                     (this.state.result.length === 0 ) ? `No ${this.props.minionType}s found` : 
-                        this.state.result.map((row) => <p>{row.minion_name}</p>)}
+                        this.state.result.map((row) => <div className="minionRow"><p>{row.minion_name}</p> <MinionReDeceaser onClick={() => this.reDecease(row.minion_name)} /></div>)}
             </div>
         );
     }
