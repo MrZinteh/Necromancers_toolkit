@@ -8,6 +8,8 @@ import StatBlock from './components/statBlock/StatBlock';
 import MinionViewer from './components/minionViewer/MinionViewer';
 import MinionConjurer from './components/minionConjurer/MinionConjurer';
 import SoulCounter from './components/soulCounter/SoulCounter';
+import Description from './components/description/Description';
+import DScryb from './components/dScryb/DScryb';
 
 class App extends React.Component {
   constructor(props) {
@@ -44,6 +46,8 @@ class App extends React.Component {
         <StatBlock minionType={ this.state.selectedMinion }/>
         <Image minionType={ this.state.selectedMinion }/>
         <MinionViewer minionType={ this.state.selectedMinion }/>
+        <Description minionType={ this.state.selectedMinion }/>
+        <DScryb minionType={ this.state.selectedMinion }/>
       </div>
     )
   }
