@@ -19,7 +19,10 @@ class SoulGatherer extends React.Component {
             body: JSON.stringify({"name": `${this.state.input}`})
         })
             .then((res) => res.json())
-            .then((data) => this.setState({ soul: data.soul_name }));
+            .then((data) => {
+                this.setState({ soul: data.soul_name });
+                this.props.fetchSoulCount();
+            });
     }
 
     handleInputChange(e) {

@@ -27,7 +27,7 @@ class SoulCounter extends React.Component {
         return (
             <div className="soulCounter">
                 <div className="Souls">Souls:</div>
-                <div className="count">{this.state.count}</div>
+                <div className="count">{this.props.count}</div>
             </div>
         )
     }

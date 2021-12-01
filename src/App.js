@@ -12,23 +12,34 @@ import SoulCounter from './components/soulCounter/SoulCounter';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedMinion: "Skeleton" };
+    this.state = { selectedMinion: "Skeleton", count: "0" };
     this.selectMinion = this.selectMinion.bind(this);
+    this.fetchSoulCount = this.fetchSoulCount.bind(this);
   }
 
   selectMinion(e) {
     this.setState({selectedMinion: e.target.id})
   }
 
+  fetchSoulCount() {
+    fetch(`/souls/count`)
+        .then((res) => res.json())
+        .then((data) => this.setState({ count: data.count }));
+  }
+
+  componentDidMount() {
+    this.fetchSoulCount();
+  }
+
   render() {
       return (
       <div className="App">
-        <SoulCounter />
+        <SoulCounter count={ this.state.count }/>
         <Header />
         <Selector selectMinion={ this.selectMinion }/>
         <div className="conCap">
           <MinionConjurer />
-          <SoulGatherer />
+          <SoulGatherer fetchSoulCount={ this.fetchSoulCount }/>
         </div>
         <StatBlock minionType={ this.state.selectedMinion }/>
         <Image minionType={ this.state.selectedMinion }/>
