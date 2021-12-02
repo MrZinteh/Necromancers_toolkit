@@ -4,7 +4,7 @@ import { ConjureButton } from './ConjureButton.js';
 class MinionConjurer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { minionType: "Skeleton" }
+        this.state = { minionType: "Skeleton", input: "Skeleton" }
         this.handleSelect = this.handleSelect.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -25,8 +25,8 @@ class MinionConjurer extends React.Component {
             method: "POST",
             body: JSON.stringify({"name": `${this.state.input}`})
         })
-            .then((res) => {
-                console.log("No souls left");
+            .then(() => {
+                this.props.toggleRecentlyConjured();
             });
     }
 

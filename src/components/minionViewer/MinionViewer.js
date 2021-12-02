@@ -38,6 +38,10 @@ class MinionViewer extends React.Component {
         if (this.props.minionType !== prevProps.minionType) {
             this.getMinions();
         }
+        else if (this.props.recentlyConjured) {
+            this.getMinions();
+            this.props.toggleRecentlyConjured();
+        }
     }
 
     render() {

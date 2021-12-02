@@ -9,7 +9,7 @@ export class MinionReDeceaser extends React.Component {
 			backgroundColor: '#456545',
 			borderRadius: '12px',
 			fontStyle: 'Helvetica',
-			fontSize: '17px'
+			fontSize: '17px',
 		}
 	}
 	render() {
@@ -18,7 +18,7 @@ export class MinionReDeceaser extends React.Component {
 				className="minionReDeceaser"
                 onClick = { this.props.onClick }
 				style = { this.style }>
-				<img src={ skull } alt="skull_icon" height="40px"/>
+				<img src={ skull } alt="skull_icon" height="30px"/>
 			</button>
 		);
 	}

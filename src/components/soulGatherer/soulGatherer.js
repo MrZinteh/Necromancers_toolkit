@@ -5,11 +5,11 @@ class SoulGatherer extends React.Component {
     constructor(props) {
         super(props);
         this.state = { soul: "", input: "" }
-        this.handleClick = this.handleClick.bind(this);
+        this.conjureSoul = this.conjureSoul.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    handleClick() {
+    conjureSoul() {
         fetch(`/souls?name=${this.state.input}`, {
             headers: {
               'Accept': 'application/json',
@@ -35,7 +35,7 @@ class SoulGatherer extends React.Component {
         return (
             <div className="soulGatherer">
                 <input type="text" id="soulName" name="soulName" placeholder="Name of soul..." onChange={this.handleInputChange}/>
-                <CaptureButton onClick={this.handleClick} />
+                <CaptureButton onClick={this.conjureSoul} />
             </div>
         );
     }

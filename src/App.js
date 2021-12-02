@@ -14,9 +14,10 @@ import DScryb from './components/dScryb/DScryb';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedMinion: "Skeleton", count: "0" };
+    this.state = { selectedMinion: "Skeleton", count: "0", recentlyConjured: false };
     this.selectMinion = this.selectMinion.bind(this);
     this.fetchSoulCount = this.fetchSoulCount.bind(this);
+    this.toggleRecentlyConjured = this.toggleRecentlyConjured.bind(this);
   }
 
   selectMinion(e) {
@@ -27,6 +28,10 @@ class App extends React.Component {
     fetch(`/souls/count`)
         .then((res) => res.json())
         .then((data) => this.setState({ count: data.count }));
+  }
+
+  toggleRecentlyConjured() {
+    this.setState({recentlyConjured: !this.state.recentlyConjured})
   }
 
   componentDidMount() {
@@ -40,12 +45,12 @@ class App extends React.Component {
         <Header />
         <Selector selectMinion={ this.selectMinion }/>
         <div className="conCap">
-          <MinionConjurer />
-          <SoulGatherer fetchSoulCount={ this.fetchSoulCount }/>
+          <MinionConjurer toggleRecentlyConjured={ this.toggleRecentlyConjured }/>
+          <SoulGatherer fetchSoulCount={ this.fetchSoulCount } />
         </div>
         <StatBlock minionType={ this.state.selectedMinion }/>
         <Image minionType={ this.state.selectedMinion }/>
-        <MinionViewer minionType={ this.state.selectedMinion }/>
+        <MinionViewer minionType={ this.state.selectedMinion } recentlyConjured= { this.state.recentlyConjured } toggleRecentlyConjured={ this.toggleRecentlyConjured }/>
         <Description minionType={ this.state.selectedMinion }/>
         <DScryb minionType={ this.state.selectedMinion }/>
       </div>
