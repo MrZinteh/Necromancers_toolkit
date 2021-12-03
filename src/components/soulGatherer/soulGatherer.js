@@ -22,6 +22,7 @@ class SoulGatherer extends React.Component {
             .then((data) => {
                 this.setState({ soul: data.soul_name });
                 this.props.fetchSoulCount();
+                this.props.toggleRecentlyCaptured();
             });
     }
 

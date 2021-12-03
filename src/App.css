@@ -9,7 +9,7 @@
     "conCap statblock image"
     "minionList description dScryb"
     "minionList description dScryb"
-    ". description .";
+    "soulManager description .";
 }
 
 .App-logo {
@@ -127,6 +127,18 @@
   flex-flow: column nowrap;
 }
 
+#soulAmount {
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom:15px;
+  text-align: center;
+}
+
+.soulDrainer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .statBlock {
   grid-area: statblock;
   padding-top: 30px;
@@ -161,6 +173,29 @@ h3 {
 }
 
 .minionReDeceaser {
+  justify-self: flex-end;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.soulManager {
+  grid-area: soulManager;
+  justify-self: stretch;
+  border: 2px solid #456545;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.soulRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.soulRemover {
   justify-self: flex-end;
   padding-left: 15px;
   padding-right: 15px;
